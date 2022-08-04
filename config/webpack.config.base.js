@@ -5,9 +5,48 @@ const Dotenv = require('dotenv-webpack')
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '',
+    path: path.resolve(process.cwd(), 'dist'),
+    filename: './js/[name][hash:8].js',
     clean: true, // 5.20 + 清空output
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        use: [
+          // 'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        type: 'asset',
+        generator: {
+          // 输出文件位置以及文件名
+          // [ext] 自带 "." 这个与 url-loader 配置不同
+          filename: "./images/[contenthash:8][ext]"
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 50 * 1024 //超过50kb不转 base64
+          }
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+        type: 'asset',
+        generator: {
+          // 输出文件位置以及文件名
+          filename: "./fonts/[contenthash:8][ext]"
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024 // 超过100kb不转 base64
+          }
+        }
+      },
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
