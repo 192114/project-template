@@ -6,22 +6,45 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    filename: './js/[name][hash:8].js',
+    filename: './js/[name][contenthash:8].js',
     clean: true, // 5.20 + 清空output
   },
   module: {
     rules: [
       {
-        test: /\.(s[ac]|c)ss$/i,
+        test: /\.(j|t)sx?$/,
         use: [
-          // 'style-loader',
-          'css-loader',
-          'sass-loader',
+          {
+            loader: 'babel-loader',
+          }
+        ]
+      },
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 3,
+            }
+          },
+          'postcss-loader',
+          {
+            loader: 'resolve-url-loader', // https://juejin.cn/post/7011128931533193230#heading-32
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ]
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
         type: 'asset',
+        exclude: /node_modules/,
         generator: {
           // 输出文件位置以及文件名
           // [ext] 自带 "." 这个与 url-loader 配置不同
@@ -36,6 +59,7 @@ module.exports = {
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'asset',
+        exclude: /node_modules/,
         generator: {
           // 输出文件位置以及文件名
           filename: "./fonts/[contenthash:8][ext]"
