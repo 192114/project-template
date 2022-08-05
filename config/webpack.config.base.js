@@ -6,13 +6,13 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    filename: './js/[name][contenthash:8].js',
+    filename: './js/[name][contenthash:8].js', // https://www.cnblogs.com/cxyqts/p/14374898.html 关于hash解释
     clean: true, // 5.20 + 清空output
   },
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.[jt]sx?$/i,
         exclude: /node_modules/,
         use: [
           {
