@@ -1,5 +1,6 @@
 const portfinder = require('portfinder')
 const { mergeWithRules } = require('webpack-merge')
+const path = require('path')
 const webpackBaseConfig = require('./webpack.config.base')
 
 const developmentConfig = mergeWithRules({
@@ -22,7 +23,7 @@ const developmentConfig = mergeWithRules({
   },
   devServer: {
     static: {
-
+      directroy: path.resolve(process.cwd(), 'dist')
     },
     compress: true,
     hot: true,
