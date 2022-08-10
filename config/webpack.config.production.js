@@ -24,7 +24,10 @@ const productionConfig = mergeWithRules({
     new MiniCssExtractPlugin({
       filename: './styles/[name][contenthash:8].css'
     })
-  ]
+  ],
+  optimization: {
+    minimize: false
+  }
 })
 
 module.exports = productionConfig
