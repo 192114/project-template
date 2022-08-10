@@ -86,5 +86,11 @@ module.exports = {
       }
     }),
     new Dotenv()
-  ]
+  ],
+  resolve: {
+    alias: {
+
+    },
+    extensions: ['.tsx', '.ts', '.scss', '.json', '.js', '.css']
+  }
 }
