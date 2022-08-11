@@ -21,5 +21,11 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'semi': ['error', 'never'],
+    'quotes': ['error', 'single'],
+    'jsx-quotes': ['error', 'prefer-double'],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
+    'react/jsx-indent-props': ['error', 2],
+    'react/jsx-indent': ['error', 2],
   },
-};
+}

@@ -3,4 +3,9 @@ $primary-color: #ff6700;
 body {
   background-color: $primary-color;
   display: flex;
+  font-size: 12px;
+
+  .key {
+    font-weight: 700;
+  }
 }
