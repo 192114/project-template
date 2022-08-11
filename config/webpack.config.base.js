@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index',
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     filename: './js/[name][contenthash:8].js', // https://www.cnblogs.com/cxyqts/p/14374898.html 关于hash解释
@@ -78,7 +78,8 @@ module.exports = {
       title: '',
       filename: 'index.html',
       meta: {
-        viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
+        viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+        'content-type': {'http-equiv': 'content-type', content: 'text/html; charset=UTF-8'},
         renderer: 'webkit', // qq uc  360 等强制 chromium内核
         'force-renderer': 'webkit', // 其他内核强制 chromium内核
         'screen-orientation': 'portrait', // uc 强制竖屏
