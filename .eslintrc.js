@@ -29,6 +29,6 @@ module.exports = {
     'react/jsx-indent': ['error', 2],
     'lines-between-class-members': ['error', 'always'],
     'indent': ['error', 2, { SwitchCase: 1 }],
-    // 'linebreak-style': ['error', 'unix'],
+    'linebreak-style': ['error', 'unix'],
   },
 }
