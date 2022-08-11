@@ -27,5 +27,8 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
     'react/jsx-indent-props': ['error', 2],
     'react/jsx-indent': ['error', 2],
+    'lines-between-class-members': ['error', 'always'],
+    'indent': ['error', 2, { SwitchCase: 1 }],
+    // 'linebreak-style': ['error', 'unix'],
   },
 }
