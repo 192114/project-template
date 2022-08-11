@@ -49,7 +49,7 @@ module.exports = {
         generator: {
           // 输出文件位置以及文件名
           // [ext] 自带 "." 这个与 url-loader 配置不同
-          filename: "./images/[contenthash:8][ext]"
+          filename: './images/[contenthash:8][ext]'
         },
         parser: {
           dataUrlCondition: {
@@ -63,7 +63,7 @@ module.exports = {
         exclude: /node_modules/,
         generator: {
           // 输出文件位置以及文件名
-          filename: "./fonts/[contenthash:8][ext]"
+          filename: './fonts/[contenthash:8][ext]'
         },
         parser: {
           dataUrlCondition: {
