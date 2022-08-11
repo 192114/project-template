@@ -6,6 +6,6 @@ class Person {
 
 }
 
-[1,2,4].includes(item => item ===2)
+const f: boolean = [1,2,4].includes(2)
 
 console.log(a)
