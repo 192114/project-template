@@ -53,7 +53,7 @@ module.exports = {
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 50 * 1024 //超过50kb不转 base64
+            maxSize: 50 * 1024 // 超过50kb不转 base64
           }
         }
       },
