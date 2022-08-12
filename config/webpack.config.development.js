@@ -41,7 +41,7 @@ const developmentConfig = mergeWithRules({
 
 // 端口占用动态端口号
 module.exports = new Promise((resolve, reject) => {
-  //查找端口号
+  // 查找端口号
   portfinder.getPort((err, port) => {
 
     if(err){
@@ -49,8 +49,8 @@ module.exports = new Promise((resolve, reject) => {
       return
     }
 
-    //端口被占用时就重新设置evn和devServer的端口
-    developmentConfig.devServer.port = process.env.PORT = port;
+    // 端口被占用时就重新设置evn和devServer的端口
+    developmentConfig.devServer.port = process.env.PORT = port
 
     resolve(developmentConfig)
 
