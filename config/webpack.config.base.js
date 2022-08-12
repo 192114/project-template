@@ -86,7 +86,10 @@ module.exports = {
         'x5-orientation': 'portrait', // qq 强制竖屏
       }
     }),
-    new Dotenv()
+    new Dotenv({
+      path: path.resolve(process.cwd(), '.env'),
+      prefix: 'import.meta.env'
+    })
   ],
   resolve: {
     alias: {

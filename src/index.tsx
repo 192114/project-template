@@ -9,7 +9,7 @@ const rootElement = document.createElement('div')
 
 const root = createRoot(rootElement)
 
-document.appendChild(rootElement)
+document.body.appendChild(rootElement)
 
 root.render(
   <StrictMode>

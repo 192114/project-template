@@ -23,7 +23,7 @@ const developmentConfig = mergeWithRules({
   },
   devServer: {
     static: {
-      directroy: path.resolve(process.cwd(), 'dist')
+      directory: path.join(__dirname, 'public'),
     },
     compress: true,
     hot: true,
@@ -50,7 +50,8 @@ module.exports = new Promise((resolve, reject) => {
     }
 
     // 端口被占用时就重新设置evn和devServer的端口
-    developmentConfig.devServer.port = process.env.PORT = port
+    process.env.PORT = port
+    developmentConfig.devServer.port = port
 
     resolve(developmentConfig)
 
