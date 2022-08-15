@@ -5,4 +5,5 @@
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n"
 }
