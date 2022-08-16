@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/index',
@@ -8,6 +9,7 @@ module.exports = {
     path: path.resolve(process.cwd(), 'dist'),
     filename: './js/[name][contenthash:8].js', // https://www.cnblogs.com/cxyqts/p/14374898.html 关于hash解释
     clean: true, // 5.20 + 清空output
+    publicPath: './',
   },
   module: {
     rules: [
@@ -77,6 +79,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '',
       filename: 'index.html',
+      favicon: './favicon.ico',
       meta: {
         viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
         'content-type': {'http-equiv': 'content-type', content: 'text/html; charset=UTF-8'},
@@ -89,6 +92,14 @@ module.exports = {
     new Dotenv({
       path: path.resolve(process.cwd(), '.env'),
       prefix: 'import.meta.env'
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(process.cwd(), 'src/public/favicon.ico'),
+          to: 'favicon.ico'
+        }
+      ]
     })
   ],
   resolve: {

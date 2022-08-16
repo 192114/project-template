@@ -23,7 +23,7 @@ const developmentConfig = mergeWithRules({
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(process.cwd(), 'src/public'),
     },
     compress: true,
     hot: true,
