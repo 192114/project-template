@@ -4,6 +4,27 @@
   "scss.validate": false,
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"],
+  "eslint.validate": ["typescript", "typescriptreact", "javascript"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.codeActionsOnSave": {
+      // 禁止eslint对html进行校验
+      "source.fixAll.eslint": false,
+      // 禁止stylelint对html进行校验
+      "source.fixAll.stylelint": false
+    }
+  },
+  "editor.codeActionsOnSave": {
+    // 文件保存时开启eslint自动修复程序
+    "source.fixAll.eslint": true,
+    // 文件保存时开启stylelint自动修复程序
+    "source.fixAll.stylelint": true
+  },
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "eslint.debug": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
 }

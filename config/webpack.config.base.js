@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
   entry: './src/index',
@@ -81,7 +83,7 @@ module.exports = {
       meta: {
         viewport:
           'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
-        'content-type': { 'http-equiv': 'content-type', content: 'text/html; charset=UTF-8' },
+        'content-type': {'http-equiv': 'content-type', content: 'text/html; charset=UTF-8'},
         renderer: 'webkit', // qq uc  360 等强制 chromium内核
         'force-renderer': 'webkit', // 其他内核强制 chromium内核
         'screen-orientation': 'portrait', // uc 强制竖屏
@@ -93,6 +95,8 @@ module.exports = {
       path: path.resolve(process.cwd(), '.env'),
       prefix: 'import.meta.env',
     }),
+    new ESLintPlugin(),
+    new StylelintPlugin(),
   ],
   resolve: {
     alias: {},
