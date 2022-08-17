@@ -7,9 +7,9 @@ const developmentConfig = mergeWithRules({
   module: {
     rules: {
       test: 'match',
-      use: 'prepend'
-    }
-  }
+      use: 'prepend',
+    },
+  },
 })(webpackBaseConfig, {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map', // https://juejin.cn/post/7023242274876162084#heading-19
@@ -17,14 +17,14 @@ const developmentConfig = mergeWithRules({
     rules: [
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: ['style-loader']
-      }
-    ]
+        use: ['style-loader'],
+      },
+    ],
   },
   devServer: {
     static: {
       directory: path.resolve(process.cwd(), 'src/public'),
-      watch: false
+      watch: false,
     },
     compress: true,
     hot: true,
@@ -37,17 +37,16 @@ const developmentConfig = mergeWithRules({
       '/api': {
         target: 'http://domain.com',
         changeOrigin: true,
-      }
-    }
-  }
+      },
+    },
+  },
 })
 
 // 端口占用动态端口号
 module.exports = new Promise((resolve, reject) => {
   // 查找端口号
   portfinder.getPort((err, port) => {
-
-    if(err){
+    if (err) {
       reject(err)
       return
     }
@@ -57,6 +56,5 @@ module.exports = new Promise((resolve, reject) => {
     developmentConfig.devServer.port = port
 
     resolve(developmentConfig)
-
   })
 })

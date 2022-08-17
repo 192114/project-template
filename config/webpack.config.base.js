@@ -17,8 +17,8 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(s[ac]|c)ss$/i,
@@ -28,7 +28,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 3,
-            }
+            },
           },
           'postcss-loader',
           {
@@ -40,7 +40,7 @@ module.exports = {
               sourceMap: true,
             },
           },
-        ]
+        ],
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -49,13 +49,13 @@ module.exports = {
         generator: {
           // 输出文件位置以及文件名
           // [ext] 自带 "." 这个与 url-loader 配置不同
-          filename: 'images/[contenthash:8][ext]'
+          filename: 'images/[contenthash:8][ext]',
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 50 * 1024 // 超过50kb不转 base64
-          }
-        }
+            maxSize: 50 * 1024, // 超过50kb不转 base64
+          },
+        },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
@@ -63,15 +63,15 @@ module.exports = {
         exclude: /node_modules/,
         generator: {
           // 输出文件位置以及文件名
-          filename: 'fonts/[contenthash:8][ext]'
+          filename: 'fonts/[contenthash:8][ext]',
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 10 * 1024 // 超过100kb不转 base64
-          }
-        }
+            maxSize: 10 * 1024, // 超过100kb不转 base64
+          },
+        },
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -79,8 +79,9 @@ module.exports = {
       filename: 'app.html',
       favicon: path.resolve(process.cwd(), 'src/assets/favicon.ico'),
       meta: {
-        viewport: 'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
-        'content-type': {'http-equiv': 'content-type', content: 'text/html; charset=UTF-8'},
+        viewport:
+          'width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+        'content-type': { 'http-equiv': 'content-type', content: 'text/html; charset=UTF-8' },
         renderer: 'webkit', // qq uc  360 等强制 chromium内核
         'force-renderer': 'webkit', // 其他内核强制 chromium内核
         'screen-orientation': 'portrait', // uc 强制竖屏
@@ -90,13 +91,11 @@ module.exports = {
     }),
     new Dotenv({
       path: path.resolve(process.cwd(), '.env'),
-      prefix: 'import.meta.env'
+      prefix: 'import.meta.env',
     }),
   ],
   resolve: {
-    alias: {
-
-    },
-    extensions: ['.tsx', '.ts', '.scss', '.json', '.js', '.css']
-  }
+    alias: {},
+    extensions: ['.tsx', '.ts', '.scss', '.json', '.js', '.css'],
+  },
 }

@@ -4,7 +4,6 @@ import { lazy, Suspense } from 'react'
 const Login = lazy(() => import('./pages/Login'))
 
 function App() {
-
   return (
     <Suspense fallback={null}>
       <Routes>

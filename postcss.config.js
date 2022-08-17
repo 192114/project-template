@@ -6,6 +6,6 @@ module.exports = {
     }),
     require('stylelint')({
       fix: true,
-    })
+    }),
   ],
 }

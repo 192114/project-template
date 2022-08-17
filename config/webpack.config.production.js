@@ -1,4 +1,4 @@
-const {mergeWithRules} = require('webpack-merge')
+const { mergeWithRules } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
@@ -8,9 +8,9 @@ const productionConfig = mergeWithRules({
   module: {
     rules: {
       test: 'match',
-      use: 'prepend'
-    }
-  }
+      use: 'prepend',
+    },
+  },
 })(webpackBaseConfig, {
   mode: 'production',
   output: {
@@ -20,19 +20,19 @@ const productionConfig = mergeWithRules({
     rules: [
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name][contenthash:8].css'
-    })
+      filename: 'styles/[name][contenthash:8].css',
+    }),
   ],
   optimization: {
     moduleIds: 'deterministic',
     runtimeChunk: {
-      name: entrypoint => `runtimechunk~${entrypoint.name}`
+      name: entrypoint => `runtimechunk~${entrypoint.name}`,
     },
     minimize: true,
     minimizer: [
@@ -43,7 +43,7 @@ const productionConfig = mergeWithRules({
           },
         },
         extractComments: false,
-      })
+      }),
     ],
     splitChunks: {
       cacheGroups: {
@@ -51,10 +51,10 @@ const productionConfig = mergeWithRules({
           name: 'node_vendors',
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 })
 
 module.exports = productionConfig
