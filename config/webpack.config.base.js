@@ -2,7 +2,6 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const ESLintPlugin = require('eslint-webpack-plugin')
-const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
   entry: './src/index',
@@ -23,29 +22,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.(s[ac]|c)ss$/i,
+        test: /\.css$/i,
         exclude: /node_modules/,
         use: [
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 3,
+              importLoaders: 1,
             },
           },
           'postcss-loader',
-          {
-            loader: 'resolve-url-loader', // https://juejin.cn/post/7011128931533193230#heading-32
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
         ],
       },
       {
-        test: /\.(jpe?g|png|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset',
         exclude: /node_modules/,
         generator: {
@@ -95,11 +85,10 @@ module.exports = {
       path: path.resolve(process.cwd(), '.env'),
       prefix: 'import.meta.env',
     }),
-    new ESLintPlugin(),
-    new StylelintPlugin(),
+    new ESLintPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] }),
   ],
   resolve: {
     alias: {},
-    extensions: ['.tsx', '.ts', '.scss', '.json', '.js', '.css'],
+    extensions: ['.tsx', '.ts', '.json', '.js', '.css'],
   },
 }

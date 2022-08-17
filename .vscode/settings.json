@@ -3,7 +3,7 @@
   "less.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": ["css"],
   "eslint.validate": ["typescript", "typescriptreact", "javascript"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.eol": "\n",

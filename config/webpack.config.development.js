@@ -16,7 +16,7 @@ const developmentConfig = mergeWithRules({
   module: {
     rules: [
       {
-        test: /\.(s[ac]|c)ss$/i,
+        test: /\.css$/i,
         use: ['style-loader'],
       },
     ],

@@ -2,7 +2,6 @@ import {useNavigate} from 'react-router-dom'
 
 function Login() {
   const navigate = useNavigate()
-  const k = s
   return (
     <div>
       <img src="/public/method-draw-image.svg" alt="" />
