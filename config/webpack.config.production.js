@@ -13,6 +13,9 @@ const productionConfig = mergeWithRules({
   }
 })(webpackBaseConfig, {
   mode: 'production',
+  output: {
+    publicPath: './',
+  },
   module: {
     rules: [
       {
@@ -23,7 +26,7 @@ const productionConfig = mergeWithRules({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './styles/[name][contenthash:8].css'
+      filename: 'styles/[name][contenthash:8].css'
     })
   ],
   optimization: {

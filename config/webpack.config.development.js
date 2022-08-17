@@ -23,12 +23,15 @@ const developmentConfig = mergeWithRules({
   },
   devServer: {
     static: {
-      directory: path.join(process.cwd(), 'src/public'),
+      directory: path.resolve(process.cwd(), 'src/public'),
+      watch: false
     },
     compress: true,
     hot: true,
     open: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: '/app.html',
+    },
     port: process.env.PORT || 8000,
     proxy: {
       '/api': {

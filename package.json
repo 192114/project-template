@@ -21,7 +21,6 @@
     "@typescript-eslint/parser": "^5.33.0",
     "autoprefixer": "^10.4.8",
     "babel-loader": "^8.2.5",
-    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.12",
     "dotenv-webpack": "^8.0.0",
@@ -56,6 +55,7 @@
   "dependencies": {
     "core-js": "3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   }
 }
