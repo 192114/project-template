@@ -1,11 +1,30 @@
 module.exports = {
   plugins: [
-    require('stylelint')({
-      fix: true,
-    }),
-    require('postcss-preset-env')(),
-    // require('cssnano')({
-    //   preset: 'default',
-    // }),
+    [
+      'stylelint',
+      {
+        fix: true,
+      }
+    ],
+    // [
+    //   'cssnano',
+    //   {
+    //     preset: 'default',
+    //   }
+    // ],
+    [
+      'postcss-preset-env', {
+        stage: 1,
+        features: {
+          'custom-media-queries': true,
+          'custom-selectors': true,
+          'nesting-rules': true,
+          'media-query-ranges': true
+        }
+      }
+    ],
+    // [
+    //   'postcss-normalize', {}
+    // ],
   ],
 }

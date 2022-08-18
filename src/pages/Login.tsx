@@ -4,7 +4,7 @@ function Login() {
   const navigate = useNavigate()
   return (
     <div>
-      <img src="/public/method-draw-image.svg" alt="" />
+      <a href="##">dsfasdfsad</a>
 
       <button type="button" onClick={() => navigate('/')}>登录</button>
     </div>
