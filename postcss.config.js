@@ -6,25 +6,23 @@ module.exports = {
         fix: true,
       }
     ],
-    // [
-    //   'cssnano',
-    //   {
-    //     preset: 'default',
-    //   }
-    // ],
+    [
+      'cssnano',
+      {
+        preset: 'default',
+      }
+    ],
+    [
+      'postcss-normalize', { forceImport: 'sanitize.css' }
+    ],
     [
       'postcss-preset-env', {
-        stage: 1,
+        stage: 3,
+        // 文档 https://preset-env.cssdb.org/features/#stage-3
         features: {
-          'custom-media-queries': true,
-          'custom-selectors': true,
-          'nesting-rules': true,
-          'media-query-ranges': true
+          'nesting-rules': true, // 嵌套语法 stage 0 语法
         }
       }
     ],
-    // [
-    //   'postcss-normalize', {}
-    // ],
   ],
 }
