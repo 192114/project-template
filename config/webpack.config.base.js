@@ -10,6 +10,13 @@ module.exports = {
     filename: 'js/[name][contenthash:8].js', // https://www.cnblogs.com/cxyqts/p/14374898.html 关于hash解释
     clean: true, // 5.20 + 清空output
   },
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      // 更改配置文件时，重新缓存
+      config: [__filename]
+    }
+  },
   module: {
     rules: [
       {
