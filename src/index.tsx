@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
 
 import App from './App'
-
+import './assets/styles/vars.css'
 import './index.css'
 
 const rootElement = document.createElement('div')

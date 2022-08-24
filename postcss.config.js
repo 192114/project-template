@@ -13,7 +13,7 @@ module.exports = {
       }
     ],
     [
-      'postcss-normalize', { forceImport: 'sanitize.css' }
+      'postcss-normalize'
     ],
     [
       'postcss-preset-env', {
@@ -21,7 +21,7 @@ module.exports = {
         // 文档 https://preset-env.cssdb.org/features/#stage-3
         features: {
           'nesting-rules': true, // 嵌套语法 stage 0 语法
-        }
+        },
       }
     ],
   ],
