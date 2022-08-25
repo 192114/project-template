@@ -6,12 +6,12 @@ module.exports = {
         fix: true,
       }
     ],
-    // [
-    //   'cssnano',
-    //   {
-    //     preset: 'default',
-    //   }
-    // ],
+    [
+      'cssnano',
+      {
+        preset: 'default',
+      }
+    ],
     [
       'postcss-normalize'
     ],
