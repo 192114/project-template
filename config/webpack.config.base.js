@@ -46,7 +46,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         type: 'asset',
         exclude: /node_modules/,
         generator: {
@@ -59,6 +59,13 @@ module.exports = {
             maxSize: 50 * 1024, // 超过50kb不转 base64
           },
         },
+      },
+      // 如果普通引入 参考 https://react-svgr.com/docs/webpack/#use-svgr-and-asset-svg-in-the-same-project
+      // 在 jsx 或  tsx 导入 svg 转成react components
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        user: ['@svgr/webpack']
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
