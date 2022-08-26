@@ -65,7 +65,7 @@ module.exports = {
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
-        user: ['@svgr/webpack']
+        use: ['@svgr/webpack']
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,

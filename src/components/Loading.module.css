@@ -1,0 +1,23 @@
+.icon {
+  width: 64px;
+  height: 64px;
+  color: #ffd26f;
+  animation: roate-infinite infinite linear 2s;
+}
+
+@keyframes roate-infinite {
+  0% {
+    transform: rotate(0);
+    color: #ffd26f;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    color: #3677ff;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    color: #ffd26f;
+  }
+}
