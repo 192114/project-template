@@ -4,6 +4,7 @@
   "description": "webpack react typescript template",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "webpack server --mode development --config ./config/webpack.config.development.js",
     "build": "webpack --mode production --config ./config/webpack.config.production.js",
     "prettier": "prettier . --write",
@@ -37,6 +38,7 @@
     "eslint-webpack-plugin": "^3.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "only-allow": "^1.1.1",
     "portfinder": "^1.0.28",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.1",
