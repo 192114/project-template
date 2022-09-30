@@ -1,3 +1,1 @@
-module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
-}
+module.exports = require('config/stylelint-config')

@@ -1,9 +1,5 @@
 ## 基于 webpack5 react18 typescript 的项目模板
 
-### TODO
-- [ ] postcss-preset-env ("importFrom" and "exportTo" will be removed in a future version of postcss-custom-properties.) **[讨论](https://github.com/csstools/postcss-plugins/discussions/192)**
-
-
 ### 使用
 
 ``` sh

@@ -27,4 +27,5 @@
   "eslint.debug": true,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
+  "git.ignoreLimitWarning": true,
 }
